@@ -2,29 +2,19 @@ const images = document.querySelectorAll('.image');
 const next = document.querySelector('.next');
 const prev = document.querySelector('.prev');
 
-let slideIndex = 1;
-showSlides(slideIndex);
+let imageIndex = 1;
+showImages(imageIndex);
 
-function plusSlides(n) {
-    showSlides(slideIndex += n);
+function plusImages(n) {
+    showImages(imageIndex += n);
 }
 
-function currentSlide(n) {
-    showSlides(slideIndex = n);
+function showImages(n) {
+    if (n > images.length) {imageIndex = 1}
+    if (n < 1) {imageIndex = images.length}
+    images.forEach(image => image.classList.remove('active'));
+    images[imageIndex-1].classList.add('active');
 }
 
-function showSlides(n) {
-    let i = 0;
-    if (n > images.length) {
-        slideIndex = 1
-    }
-    if (n < 1) {
-        slideIndex = images.length
-    }
-    images.forEach(image => image.style.display = "none");
-    images[slideIndex-1].style.display = "block";
-}
-
-
-next.addEventListener('click', event => plusSlides(-1));
-prev.addEventListener('click', event => plusSlides(1));
+next.addEventListener('click', event => plusImages(-1));
+prev.addEventListener('click', event => plusImages(1));
