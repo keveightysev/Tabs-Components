@@ -1,0 +1,36 @@
+.carousel {
+    position: relative;
+    width: 70%;
+    margin: 45px auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid @lambda-red;
+    box-shadow: 1px 1px 5px @lambda-red;
+    border-radius: 10px;
+    overflow: hidden;
+
+    .image {
+        display: none;
+    }
+
+    .active {
+        display: block;
+    }
+
+    .controls {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        button {
+            border: none;
+            border-radius: 25px;
+            background: @lambda-red;
+            padding: 15px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+}
