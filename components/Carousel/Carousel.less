@@ -4,10 +4,16 @@
     margin: 45px auto;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     border: 1px solid @lambda-red;
     box-shadow: 1px 1px 5px @lambda-red;
     border-radius: 10px;
     overflow: hidden;
+
+    .images {
+        width: 100%;
+        height: 450px;
+    }
 
     .image {
         display: none;
@@ -31,6 +37,7 @@
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
+            outline: none;
         }
     }
 }
